@@ -6,7 +6,7 @@ document.getElementById('convert-button').addEventListener('click', function() {
 });
 
 function convertToRomanNumeral(number) {
-    let romanNumerals = [
+    const romanNumerals = [
         ['M', 1000],
         ['CM', 900],
         ['D', 500],
