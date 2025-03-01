@@ -1,11 +1,5 @@
-document.getElementById('convert-button').addEventListener('click', function() {
-    let inputNumber = parseInt(document.getElementById('input-number').value);
-    let result = convertToRomanNumeral(inputNumber);
-
-    document.getElementById('result').innerHTML = 'Roman numeral: ' + result;
-});
-
-function convertToRomanNumeral(number) {
+function convertToRoman() {
+    const number = parseInt(document.getElementById("number").value);
     const romanNumerals = [
         ['M', 1000],
         ['CM', 900],
@@ -21,7 +15,6 @@ function convertToRomanNumeral(number) {
         ['IV', 4],
         ['I', 1]
     ];
-
     let result = '';
 
     for (let i = 0; i < romanNumerals.length; i++) {
@@ -31,5 +24,5 @@ function convertToRomanNumeral(number) {
         }
     }
 
-    return result.toUpperCase();
+    document.getElementById("result").innerText = result.toUpperCase();
 }
