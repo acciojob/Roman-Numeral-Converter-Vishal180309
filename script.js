@@ -1,6 +1,7 @@
-function convertToRoman() {
-    const number = parseInt(document.getElementById("number").value);
-    const romanNumerals = [
+function convertToRoman(num) {
+    if (num < 0 || num > 100000) return "Invalid input";
+    if (num === 0) return "";
+    const romanSymbols = [
         ['M', 1000],
         ['CM', 900],
         ['D', 500],
@@ -15,14 +16,18 @@ function convertToRoman() {
         ['IV', 4],
         ['I', 1]
     ];
-    let result = '';
-
-    for (let i = 0; i < romanNumerals.length; i++) {
-        while (number >= romanNumerals[i][1]) {
-            result += romanNumerals[i][0];
-            number -= romanNumerals[i][1];
+    let result = "";
+    for (let [symbol, value] of romanSymbols) {
+        while (num >= value) {
+            result += symbol;
+            num -= value;
         }
     }
-
-    document.getElementById("result").innerText = result.toUpperCase();
+    return result;
 }
+
+document.getElementById("convert").addEventListener("click", function() {
+    const num = parseInt(document.getElementById("num").value);
+    const result = convertToRoman(num);
+    document.getElementById("result").innerText = result;
+});

@@ -3,26 +3,19 @@ body {
     text-align: center;
 }
 
-input[type="number"] {
-    width: 200px;
-    height: 30px;
-    font-size: 20px;
+#num {
     padding: 10px;
-    margin-bottom: 20px;
+    font-size: 18px;
 }
 
-button {
-    width: 200px;
-    height: 30px;
-    font-size: 20px;
-    padding: 10px;
-    background-color: #4CAF50;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
+#convert {
+    padding: 10px 20px;
+    font-size: 18px;
     cursor: pointer;
 }
 
-button:hover {
-    background-color: #3e8e41;
+#result {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 20px;
 }
